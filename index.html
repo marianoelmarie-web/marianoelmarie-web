@@ -1,226 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elmarie Mariano | Personal Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elmarie Mariano | Portfolio</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f4f7fb;
-        }
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #f4f7fb;
+    line-height: 1.6;
+}
 
-        /* Navigation */
-        nav {
-            background: #12355b;
-            padding: 15px 8%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+nav {
+    background: #12355b;
+    padding: 15px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        nav h2 {
-            color: white;
-        }
+nav h2 {
+    color: white;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        nav ul li a:hover {
-            color: #8fd3ff;
-        }
+#home {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #dceeff, #ffffff);
+}
 
-        /* Home */
-        #home {
-            min-height: 90vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #dceeff, #ffffff);
-        }
+.hero {
+    max-width: 800px;
+}
 
-        .hero {
-            max-width: 800px;
-        }
+.profile-picture {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
 
-        .profile-picture {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 6px solid white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-        }
+.hero h1 {
+    font-size: 45px;
+    color: #12355b;
+}
 
-        .hero h1 {
-            font-size: 45px;
-            color: #12355b;
-            margin-bottom: 10px;
-        }
+.hero h3 {
+    color: #456;
+    margin: 10px 0;
+}
 
-        .hero h3 {
-            color: #456;
-            margin-bottom: 15px;
-        }
+.hero p {
+    max-width: 650px;
+    margin: auto;
+}
 
-        .hero p {
-            max-width: 650px;
-            margin: auto;
-        }
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #12355b;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+}
 
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: #12355b;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-        }
+section {
+    padding: 70px 8%;
+}
 
-        .button:hover {
-            background: #1c568f;
-        }
+section h2 {
+    text-align: center;
+    color: #12355b;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
 
-        /* General Sections */
-        section {
-            padding: 70px 8%;
-        }
+.content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+}
 
-        section h2 {
-            text-align: center;
-            color: #12355b;
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
+.skills-container,
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
 
-        .content {
-            max-width: 900px;
-            margin: auto;
-        }
+.skill,
+.project,
+.education {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
 
-        /* About */
-        #about p {
-            text-align: center;
-            font-size: 18px;
-        }
+.skill {
+    text-align: center;
+}
 
-        /* Skills */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+.skill h3,
+.project h3,
+.education h3 {
+    color: #12355b;
+    margin-bottom: 10px;
+}
 
-        .skill {
-            background: white;
-            padding: 25px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
+.education {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
 
-        .skill h3 {
-            color: #12355b;
-            margin-bottom: 10px;
-        }
+#contact {
+    background: #eaf3fb;
+}
 
-        /* Projects */
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
-            margin: auto;
-        }
+.contact-info {
+    text-align: center;
+    font-size: 18px;
+}
 
-        .project {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
+.contact-info p {
+    margin: 10px;
+}
 
-        .project h3 {
-            color: #12355b;
-            margin-bottom: 10px;
-        }
+footer {
+    background: #12355b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
-        /* Education */
-        .education {
-            background: white;
-            max-width: 800px;
-            margin: auto;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
+@media (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-        .education h3 {
-            color: #12355b;
-            margin-bottom: 10px;
-        }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-        /* Contact */
-        #contact {
-            background: #eaf3fb;
-        }
+    .hero h1 {
+        font-size: 35px;
+    }
+}
+</style>
+</head>
 
-        .contact-info {
-            text-align: center;
-            font-size: 18px;
-        }
+<body>
 
-        .contact-info p {
-            margin: 10px;
-        }
+<nav>
+    <h2>Elmarie</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-        /* Footer */
-        footer {
-            background: #12355b;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+<section id="home">
+<div class="hero">
 
-        /* Responsive */
-        @media (max-width: 700px) {
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
+<img src="profile.jpg" alt="Elmarie Mariano" class="profile-picture">
 
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+<h1>Hi, I'm Elmarie Mariano</h1>
 
-            .hero h1 {
+<h3>BS Information Technology Student</h3>
+
+<p>
+Welcome to my personal portfolio website.
+I am an aspiring IT professional interested in
+web development, networking, and information technology.
+</p>
+
+<a href="#about" class="button">Learn More About Me</a>
+
+</div>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+
+<div class="content">
+<p>
+I am a Bachelor of Science in Information Technology student
+at Nueva Vizcaya State University. I am interested in technology,
+web development, networking, and system development. I enjoy
+learning new skills and applying what I learn through different
+school projects and activities.
+</p>
+</div>
+</section>
+<section id="skills">
+<h2>My Skills</h2>
+
+<div class="skills-container">
+
+<div class="skill">
+<h3>HTML & CSS</h3>
+<p>Creating and designing basic web pages.</p>
+</div>
+
+<div class="skill">
+<h3>Web Development</h3>
+<p>Developing simple and responsive websites.</p>
+</div>
+
+<div class="skill">
+<h3>Basic Programming</h3>
+<p>Understanding basic programming concepts and logic.</p>
+</div>
+
+<div class="skill">
+<h3>Networking</h3>
+<p>Basic knowledge of computer networks and configuration.</p>
+</div>
+
+<div class="skill">
+<h3>System Analysis</h3>
+<p>Analyzing system requirements and processes.</p>
+</div>
+
+<div class="skill">
+<h3>Documentation</h3>
+<p>Creating project documents and technical reports.</p>
+</div>
+
+<div class="skill">
+<h3>Microsoft Office</h3>
+<p>Using Word, PowerPoint, and other productivity tools.</p>
+</div>
+
+<div class="skill">
+<h3>Problem Solving</h3>
+<p>Finding solutions to technical problems.</p>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<h2>My Projects</h2>
+
+<div class="projects-container">
+
+<div class="project">
+<h3>Online Equipment and Borrowing Management System</h3>
+<p>
+A proposed online system designed to help manage
+equipment borrowing and returning transactions
+for faculty at Bayombong Central School.
+</p>
+</div>
+
+<div class="project">
+<h3>Networking Projects</h3>
+<p>
+School projects involving computer networking,
+network configuration, and Cisco Packet Tracer.
+</p>
+</div>
+
+<div class="project">
+<h3>Personal Portfolio Website</h3>
+<p>
+A personal website created using HTML and CSS
+to showcase my profile, skills, education, and projects.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+
+<div class="education">
+
+<h3>Bachelor of Science in Information Technology</h3>
+
+<p>Nueva Vizcaya State University</p>
+
+<p>Philippines</p>
+
+<br>
+
+<p>
+Currently developing my knowledge and skills in
+information technology, programming, networking,
+system development, and web development.
+</p>
+
+</div>
+</section>
+
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<div class="contact-info">
+
+<p><strong>Name:</strong> Elmarie Mariano</p>
+
+<p>
+<strong>Email:</strong>
+your-email@example.com
+</p>
+
+<p>
+<strong>Location:</strong>
+Philippines
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Elmarie Mariano. All Rights Reserved.
+</p>
+
+</footer>
+
+</body>
+</html>
