@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Elmarie Mariano | Portfolio</title>
+    <title>Elmarie Mariano | Personal Portfolio</title>
 
     <style>
         * {
@@ -16,20 +15,21 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #f5f7fb;
+            line-height: 1.6;
             color: #333;
+            background: #f4f7fb;
         }
 
         /* Navigation */
         nav {
-            background: #1e3a8a;
-            padding: 18px 8%;
+            background: #12355b;
+            padding: 15px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
 
         nav h2 {
@@ -37,91 +37,106 @@
         }
 
         nav ul {
-            display: flex;
             list-style: none;
-            gap: 25px;
+            display: flex;
+            gap: 20px;
         }
 
-        nav a {
+        nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
 
-        nav a:hover {
-            color: #93c5fd;
+        nav ul li a:hover {
+            color: #8fd3ff;
         }
 
         /* Home */
-        .home {
+        #home {
             min-height: 90vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #dceeff, #ffffff);
         }
 
-        .home h1 {
-            font-size: 55px;
-            color: #1e3a8a;
-            margin-bottom: 10px;
+        .hero {
+            max-width: 800px;
         }
 
-        .home h3 {
-            font-size: 24px;
-            color: #555;
+        .profile-picture {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
             margin-bottom: 20px;
         }
 
-        .home p {
+        .hero h1 {
+            font-size: 45px;
+            color: #12355b;
+            margin-bottom: 10px;
+        }
+
+        .hero h3 {
+            color: #456;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
             max-width: 650px;
-            font-size: 18px;
             margin: auto;
-            line-height: 1.7;
         }
 
         .button {
             display: inline-block;
-            margin-top: 25px;
-            padding: 13px 28px;
-            background: #1e3a8a;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #12355b;
             color: white;
             text-decoration: none;
             border-radius: 25px;
         }
 
         .button:hover {
-            background: #2563eb;
+            background: #1c568f;
         }
 
         /* General Sections */
         section {
-            padding: 70px 10%;
+            padding: 70px 8%;
         }
 
         section h2 {
             text-align: center;
-            color: #1e3a8a;
+            color: #12355b;
             font-size: 32px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: auto;
         }
 
         /* About */
-        .about {
-            max-width: 800px;
-            margin: auto;
+        #about p {
             text-align: center;
             font-size: 18px;
-            line-height: 1.8;
         }
 
         /* Skills */
-        .skills {
+        .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .skill {
@@ -129,103 +144,83 @@
             padding: 25px;
             text-align: center;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
-        .skill:hover {
-            transform: translateY(-5px);
+        .skill h3 {
+            color: #12355b;
+            margin-bottom: 10px;
         }
 
         /* Projects */
-        .projects {
+        .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .project {
             background: white;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .project h3 {
-            color: #1e3a8a;
-            margin-bottom: 12px;
-        }
-
-        .project p {
-            line-height: 1.6;
+            color: #12355b;
+            margin-bottom: 10px;
         }
 
         /* Education */
         .education {
-            max-width: 700px;
+            background: white;
+            max-width: 800px;
             margin: auto;
-            background: #dbeafe;
             padding: 30px;
+            border-radius: 12px;
             text-align: center;
-            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .education h3 {
-            color: #1e3a8a;
+            color: #12355b;
             margin-bottom: 10px;
         }
 
         /* Contact */
-        .contact {
+        #contact {
+            background: #eaf3fb;
+        }
+
+        .contact-info {
             text-align: center;
             font-size: 18px;
-            line-height: 2;
+        }
+
+        .contact-info p {
+            margin: 10px;
         }
 
         /* Footer */
         footer {
-            background: #1e3a8a;
+            background: #12355b;
             color: white;
             text-align: center;
             padding: 20px;
         }
 
-        /* Mobile */
+        /* Responsive */
         @media (max-width: 700px) {
-
             nav {
                 flex-direction: column;
-                gap: 15px;
+                gap: 10px;
             }
 
             nav ul {
-                gap: 12px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
-            .home h1 {
-                font-size: 38px;
-            }
-
-            .home h3 {
-                font-size: 20px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav>
-        <h2>Elmarie</h2>
-
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </na
+            .hero h1 {
